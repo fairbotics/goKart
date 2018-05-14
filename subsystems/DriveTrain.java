@@ -29,16 +29,9 @@ public class DriveTrain extends Subsystem {
     double turnSpeed = 0.6;
     
     public DriveTrain(){
-        if(RobotMap.usingFourMotors){
-            // Do 4 motor stuff
-        }
-        else{
         leftMotor = new Victor(RobotMap.LEFT_MOTOR);
         rightMotor = new Victor(RobotMap.RIGHT_MOTOR);
         driveTrain = new RobotDrive(rightMotor, leftMotor);
-        //driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-        //driveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-        }
     }
     
     public void initDefaultCommand() {

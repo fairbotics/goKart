@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team5340.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -17,8 +19,8 @@ public class OI {
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
-	Joystick driveStick1 = new Joystick(RobotMap.DRIVE_STICK_1);
-	Joystick driveStick2 = new Joystick(RobotMap.DRIVE_STICK_2);
+	public Joystick driveStick1 = new Joystick(RobotMap.DRIVE_STICK_1);
+	public Joystick driveStick2 = new Joystick(RobotMap.DRIVE_STICK_2);
 	
 	// Button button = new JoystickButton(stick, buttonNumber);
 
