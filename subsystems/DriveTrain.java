@@ -8,7 +8,7 @@ import org.usfirst.frc.team5340.robot.commands.DriveWStick;
 import java.lang.Math;
 
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -21,16 +21,16 @@ public class DriveTrain extends Subsystem {
     
     RobotDrive driveTrain;
     
-    Victor leftMotor;
-    Victor rightMotor;
+    Talon leftMotor;
+    Talon rightMotor;
     OI joysticks;
     
     double driveSpeed = 1;
     double turnSpeed = 0.6;
     
     public DriveTrain(){
-        leftMotor = new Victor(RobotMap.LEFT_MOTOR);
-        rightMotor = new Victor(RobotMap.RIGHT_MOTOR);
+        leftMotor = new Talon(RobotMap.LEFT_MOTOR);
+        rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
         driveTrain = new RobotDrive(rightMotor, leftMotor);
     }
     
