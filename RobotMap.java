@@ -24,4 +24,7 @@ public class RobotMap {
 	public static final int LEFT_MOTOR = 0;
 	public static final int RIGHT_MOTOR = 1;
 	
+	//sensors
+		//ultrasonic
+		public static final int FRONT_ULTRA = 2;
 }

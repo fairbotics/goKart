@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static DriveTrain driveSub = new DriveTrain();
+	public static Avoider avoidSub = new Avoider();
 	
 
 	Command m_autonomousCommand;
