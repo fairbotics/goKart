@@ -9,6 +9,7 @@ import java.lang.Math;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -22,7 +23,7 @@ public class DriveTrain extends Subsystem {
     RobotDrive driveTrain;
     
     Talon leftMotor;
-    Talon rightMotor;
+    Spark rightMotor;
     OI joysticks;
     
     double driveSpeed = 1;
@@ -30,7 +31,7 @@ public class DriveTrain extends Subsystem {
     
     public DriveTrain(){
         leftMotor = new Talon(RobotMap.LEFT_MOTOR);
-        rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
+        rightMotor = new Spark(RobotMap.RIGHT_MOTOR);
         driveTrain = new RobotDrive(rightMotor, leftMotor);
     }
     
