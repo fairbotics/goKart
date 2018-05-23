@@ -18,7 +18,7 @@ public class RobotMap {
 	
 	//joysticks
 	public static final int DRIVE_STICK_1 = 0;
-	public static final int DRIVE_STICK_2 = 1;
+		public static final int THROTTLE = 2;
 	
 	//motors
 	public static final int LEFT_MOTOR = 0;

@@ -27,7 +27,7 @@ public class DriveTrain extends Subsystem {
     OI joysticks;
     
     double driveSpeed = 1;
-    double turnSpeed = 0.6;
+    double turnSpeed = 1;
     
     public DriveTrain(){
         leftMotor = new Talon(RobotMap.LEFT_MOTOR);
@@ -41,12 +41,15 @@ public class DriveTrain extends Subsystem {
         setDefaultCommand(new DriveWStick());
     }
     
-    public void fairBotTank() {
+    public void teleDrive() {
         
-        double forward = Math.sqrt((-Robot.oi.driveStick1.getThrottle() + 1) / 2);
-        double turn = Math.sqrt(Math.sqrt((-Robot.oi.driveStick1.getThrottle() + 1) / 2));
+        double forward = Math.sqrt((-Robot.oi.driveStick1.getZ() + 1) / 2);
+        double turn = Math.sqrt((-Robot.oi.driveStick1.getZ() + 1) / 2);
         
-        driveTrain.arcadeDrive(Robot.oi.driveStick1.getY() * forward * driveSpeed, Robot.oi.driveStick1.getX() * turn * -turnSpeed);
+        forward *= (Robot.oi.driveStick1.getY());
+        turn *= (Robot.oi.driveStick1.getX());
+        
+        driveTrain.arcadeDrive(forward * driveSpeed, -(turn * turnSpeed));
         //driveTrain.tankDrive(Robot.oi.driveStick1.getY(), Robot.oi.driveStick2.getY());
         
 //        As of right now (11/29/16) there is a negative value assigned to driveStick2's X value, the robot is strafing backwards this is the current fix.
