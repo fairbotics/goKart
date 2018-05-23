@@ -43,11 +43,24 @@ public class DriveTrain extends Subsystem {
     
     public void teleDrive() {
         
-        double forward = Math.sqrt((-Robot.oi.driveStick1.getZ() + 1) / 2);
-        double turn = Math.sqrt((-Robot.oi.driveStick1.getZ() + 1) / 2);
+        double forward = (-Robot.oi.driveStick1.getZ() + 1) / 2;
+        double turn = (-Robot.oi.driveStick1.getZ() + 1) / 2;
         
-        forward *= (Robot.oi.driveStick1.getY());
-        turn *= (Robot.oi.driveStick1.getX());
+        if(Robot.oi.driveStick1.getY() < 0) {
+        	forward *= -Math.sqrt(Math.sqrt(Math.abs(Robot.oi.driveStick1.getY())));
+        }
+        else {
+        	forward *= Math.sqrt(Math.sqrt((Robot.oi.driveStick1.getY())));
+        }
+        if(Robot.oi.driveStick1.getX() < 0) {
+        	turn *= -Math.sqrt(Math.sqrt(Math.abs(Robot.oi.driveStick1.getX())));
+        }
+        else {
+        	turn *= Math.sqrt(Math.sqrt(Robot.oi.driveStick1.getX()));
+        }
+        
+//        forward *= Math.pow(Robot.oi.driveStick1.getY(), -1);
+//        turn *= Math.pow(Robot.oi.driveStick1.getX(), -1);
         
         driveTrain.arcadeDrive(forward * driveSpeed, -(turn * turnSpeed));
         //driveTrain.tankDrive(Robot.oi.driveStick1.getY(), Robot.oi.driveStick2.getY());
