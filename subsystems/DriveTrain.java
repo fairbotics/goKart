@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 /**
  *
@@ -45,6 +47,9 @@ public class DriveTrain extends Subsystem {
         
         double forward = (-Robot.oi.driveStick1.getZ() + 1) / 2;
         double turn = (-Robot.oi.driveStick1.getZ() + 1) / 2;
+        
+        SmartDashboard.putNumber("forward", forward);
+        SmartDashboard.updateValues();
         
         if(Robot.oi.driveStick1.getY() < 0) {
         	forward *= -Math.sqrt(Math.sqrt(Math.abs(Robot.oi.driveStick1.getY())));
