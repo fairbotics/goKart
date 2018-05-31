@@ -24,16 +24,16 @@ public class DriveTrain extends Subsystem {
     
     RobotDrive driveTrain;
     
-    Talon leftMotor;
-    Talon rightMotor;
+    Spark leftMotor;
+    Spark rightMotor;
     OI joysticks;
     
     double driveSpeed = 1;
     double turnSpeed = 1;
     
     public DriveTrain(){
-        leftMotor = new Talon(RobotMap.LEFT_MOTOR);
-        rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
+        leftMotor = new Spark(RobotMap.LEFT_MOTOR);
+        rightMotor = new Spark(RobotMap.RIGHT_MOTOR);
         driveTrain = new RobotDrive(rightMotor, leftMotor);
     }
     
